@@ -25,7 +25,6 @@ const generateKeyword = (title: string): string[] => {
 }
 
 
-
 const generateGenresSet = (movies: Movie[]): Genre[] => {
   let moviesGenres: any = []; // Creat a Set (will not allow duplicated values) 👀
 

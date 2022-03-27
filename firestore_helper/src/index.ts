@@ -10,14 +10,13 @@ const simulateSearchQuery = async (title: string) => {
   snapshot.forEach((doc) => console.log(doc.data()));
 }
 
-
-// import { populateMoviesCollection } from './populateMoviesCollection';
-import { populateGenresCollection } from './populateGenresCollection';
+//! Uncomment the lines below to populate all the desired Collections... 
+import { populateMoviesCollection } from './populateMoviesCollection';
+// import { populateGenresCollection } from './populateGenresCollection';
 
 (async () => {
-  //! Uncomment the line below to populate all the desired Collections... 
-
-  // await populateMoviesCollection();
+  //! Uncomment the lines below to populate all the desired Collections... 
+  await populateMoviesCollection();
   // await populateGenresCollection();
 
   // let query: string = "lone";
