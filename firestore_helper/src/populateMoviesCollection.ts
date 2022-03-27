@@ -19,7 +19,6 @@ const processMovies = (): Movie[] => {
       ...movie,
       titleKeywords: generateKeyword(movie.title as unknown as string), // Create the Keyword array to simulate a substr.
       comments: [],
-      genres: [...movie.genre, "*"] // Add wildcard operator to search later when no actual genre is provided. 
     }
   });
 
