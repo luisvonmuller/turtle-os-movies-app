@@ -1,0 +1,26 @@
+{
+  "name": "firestore_helper",
+  "version": "0.0.1",
+  "description": "Populate the Firestore Database with the Provided Dataset",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "nodemon src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Firestore"
+  ],
+  "author": "luisvonmuller",
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^9.6.10",
+    "firebase-admin": "^10.0.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
