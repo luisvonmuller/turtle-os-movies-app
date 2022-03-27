@@ -16,3 +16,5 @@ export type Movie = {
   actors: string[],
   comments: string[],
 };
+
+export type Genre = string;

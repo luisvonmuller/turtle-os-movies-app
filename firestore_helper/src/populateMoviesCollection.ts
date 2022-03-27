@@ -2,7 +2,6 @@
 import moviesDataSet from './Data/movies.json';
 import { Movie } from './Types';
 /* Firestore funcitons to write Data to the Collection */
-import { collection, addDoc } from "firebase/firestore";
 import { generateKeyword } from './helpers';
 
 import db from './firestoreDb';
