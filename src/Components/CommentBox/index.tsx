@@ -42,8 +42,7 @@ export default function CommentBox({
   const [comment, setNewComment] = useState<string>("");
 
   const getComments = async (movieId: string) => {
-    let tmpComments = await listComments(movieId);
-    setComments(tmpComments);
+    await listComments({ movieId, setComments });
   };
 
   const handleClose = () => {

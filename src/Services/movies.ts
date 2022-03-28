@@ -18,7 +18,6 @@ export const firestoreMoviesQuery = async (query: Query): Promise<Movie[]> => {
     limit(5)
   );
 
-  console.log(query.title == "");
   /* Get the Collection Snapshot */
   const querySnapshot = await getDocs(moviesDataQuery);
   const movieSet: Movie[] = [];
