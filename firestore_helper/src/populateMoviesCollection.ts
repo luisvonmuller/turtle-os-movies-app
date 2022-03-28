@@ -32,7 +32,7 @@ const populateMoviesCollection = async () => {
   movies.forEach(async (movie, number) => {
     console.log(`Adding movie number: ${number + 1}`);
     const res = await db.collection('movies').add(movie);
-    await db.collection('comments').doc(res.id).set({ content: "😱 This Movie was so Great, I thought that I was watching the masterpiece of the century! I'm sure this gonna win a Oscar this year (Pre filled Example comment on every movie 😅)" })
+    await db.collection('comments').doc(res.id).set({ comments: [{ content: "😱 This Movie was so Great, I thought that I was watching the masterpiece of the century! I'm sure this gonna win a Oscar this year (Pre filled Example comment on every movie 😅)" }] })
     totalCounter = number;
   });
 
