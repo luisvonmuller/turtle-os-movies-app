@@ -1,8 +1,16 @@
+import React from "react";
+
 /* Search Fields Data Structure */
 export type Query = {
   genre?: string;
   title?: string;
 };
+
+export type QueryContext = {
+  query: Query,
+  setQuery: React.Dispatch<React.SetStateAction<Query>>
+}
+
 
 /* Movie Common Data Structure */
 export type Movie = {
@@ -25,3 +33,5 @@ export type Movie = {
 type Comment = {
   content: string;
 }
+
+

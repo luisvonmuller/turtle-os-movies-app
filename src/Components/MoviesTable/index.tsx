@@ -3,19 +3,16 @@ import { DataGrid } from "@mui/x-data-grid";
 import { firestoreMoviesQuery } from "../../Services/movies";
 import { Movie, Query } from "../../Types";
 import collumStyles from "./DataGridStyles";
+import AppContext from "../../AppContext";
 
 interface MoviesDataGrid {
-  query: Query;
   setMovieId(movieId: string): void;
   setOpen(open: boolean): void;
 }
 
-export default function MoviesTable({
-  query,
-  setMovieId,
-  setOpen,
-}: MoviesDataGrid) {
+export default function MoviesTable({ setMovieId, setOpen }: MoviesDataGrid) {
   const [rows, setRows] = useState<Movie[]>([]);
+  const { query } = React.useContext(AppContext); // Global Context...
 
   const getMovies = async (query: Query) => {
     setRows(await firestoreMoviesQuery(query));

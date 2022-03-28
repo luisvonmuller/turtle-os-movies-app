@@ -1,10 +1,9 @@
 import {
   onSnapshot,
+  doc, updateDoc, arrayUnion
 } from "firebase/firestore";
 
-import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { db } from "../Services/firestore";
-
 import { Comment } from '../Types';
 
 interface listCommentsArgs {

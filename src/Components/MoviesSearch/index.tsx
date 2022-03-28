@@ -1,15 +1,11 @@
 import * as React from "react";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
+import AppContext from "../../AppContext";
 
-import { Query } from "../../Types";
+export default function MoviesSearch() {
+  const { query, setQuery } = React.useContext(AppContext);
 
-interface MoviesSearchArgs {
-  setQuery(query: Query): void;
-  query: Query;
-}
-
-export default function MoviesSearch({ setQuery, query }: MoviesSearchArgs) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery({ title: event.target.value, genre: query.genre });
   };

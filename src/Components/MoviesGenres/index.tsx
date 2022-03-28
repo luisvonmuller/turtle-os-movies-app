@@ -4,15 +4,11 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { listGenres, Genre } from "../../Services/genres";
-import { Query } from "../../Types";
+import AppContext from "../../AppContext";
 
-interface MoviesGenresArgs {
-  setQuery(query: Query): void;
-  query: Query;
-}
-
-export default function MoviesGenres({ setQuery, query }: MoviesGenresArgs) {
-  const [genre, setGenre] = useState<Genre[]>([]);
+export default function MoviesGenres() {
+  const [genre, setGenre] = useState<Genre[]>([]); // Component State to handle Change.
+  const { query, setQuery } = React.useContext(AppContext); // Global Context...
 
   const handleChange = (event: SelectChangeEvent) => {
     setQuery({ title: query.title, genre: event.target.value as string });

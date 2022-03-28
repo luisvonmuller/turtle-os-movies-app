@@ -8,42 +8,30 @@ import CommentBox from "./Components/CommentBox";
 /* Basic layout */
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import { Query } from "./Types";
+
+/* App Context */
+import { AppContextProvider } from "./AppContext";
 
 function App() {
-  const [query, setQuery] = useState<Query>({
-    genre: "all",
-    title: undefined,
-  });
-
-  /* Global States - I could use ImmerJs or Redux for it but, since it was just some, theres no need. */
-  const [desiredGenre, setDesiredGenre] = useState<string | null>(null);
-  const [title, setTitle] = useState<string>("");
-
   /* Comment Box */
   const [open, setOpen] = useState(false);
   const [movieId, setMovieId] = useState<string>(""); // This one is the default for debug propouses/tests.
 
-  useEffect(() => {
-    setDesiredGenre(desiredGenre);
-    setTitle(title);
-  }, [desiredGenre, title, movieId]);
-
   return (
-    <>
+    <AppContextProvider>
       <CommentBox open={open} setOpen={setOpen} movieId={movieId} />
       <Box sx={{ margin: 2 }}>
         <Grid container spacing={1} justifyContent="space-between">
           <Grid item xs={6}>
-            <MoviesSearch setQuery={setQuery} query={query} />
+            <MoviesSearch />
           </Grid>
           <Grid item xs={6}>
-            <MoviesGenres setQuery={setQuery} query={query} />
+            <MoviesGenres />
           </Grid>
         </Grid>
       </Box>
-      <MoviesTable query={query} setMovieId={setMovieId} setOpen={setOpen} />
-    </>
+      <MoviesTable setMovieId={setMovieId} setOpen={setOpen} />
+    </AppContextProvider>
   );
 }
 
