@@ -25,8 +25,10 @@ const generateKeyword = (title: string): string[] => {
 }
 
 
+
+//TODO: Here I could just use the JS Set(), but I had no time to think better on what I were doing... 
 const generateGenresSet = (movies: Movie[]): Genre[] => {
-  let moviesGenres: any = []; // Creat a Set (will not allow duplicated values) 👀
+  const moviesGenres: any = []; // Creat a Set (will not allow duplicated values) 👀
 
   movies.forEach((movie) => {
     movie.genre.forEach((genre: string) => moviesGenres[genre] = 0) // Just to index em'
@@ -34,8 +36,5 @@ const generateGenresSet = (movies: Movie[]): Genre[] => {
 
   return Object.keys(moviesGenres) as Genre[];
 }
-
-
-
 
 export { generateKeyword, generateGenresSet };

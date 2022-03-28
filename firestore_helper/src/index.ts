@@ -16,7 +16,7 @@ import { populateMoviesCollection } from './populateMoviesCollection';
 
 (async () => {
   //! Uncomment the lines below to populate all the desired Collections... 
-  await populateMoviesCollection();
+  //await populateMoviesCollection();
   // await populateGenresCollection();
 
   // let query: string = "lone";

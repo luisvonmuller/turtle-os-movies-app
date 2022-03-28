@@ -7,7 +7,7 @@ import { generateGenresSet } from './helpers';
 const populateGenresCollection = async (): Promise<void> => {
   const genres: Genre[] = generateGenresSet(moviesDataSet as Movie[]);
 
-  console.log("We have a Set of " + genres.length + " Genres. Lets create a Collection with them 😊");
+  // console.log("We have a Set of " + genres.length + " Genres. Lets create a Collection with them 😊");
 
   genres.forEach(async (genre) => {
     console.log(`Adding movie genre: ${genre}`);
