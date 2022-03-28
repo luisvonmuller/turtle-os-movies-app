@@ -3,9 +3,6 @@
 */*.log
 */npm-debug.log*
 
-# Diagnostic reports (https://nodejs.org/api/report.html)
-*/report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
-
 # Runtime data
 */pids
 */*.pid
@@ -29,3 +26,4 @@
 # dotenv environment variables file
 .env
 .env.test
+node_modules
