@@ -40,4 +40,4 @@ const populateMoviesCollection = async () => {
 }
 
 
-export { populateMoviesCollection };
+export { populateMoviesCollection };xw
