@@ -37,4 +37,16 @@
 //     expect(totalMoviesCount).toBe(1000);
 // 
 //   });
+
+// test("Check Search Field", () => {
+//   const simulateSearchQuery = async (title: string) => {
+//   const moviesCollectionRef = db.collection('movies');
+//   console.log("Searching for: ");
+//   console.log(title.toLowerCase());
+//   const snapshot = await moviesCollectionRef.where('titleKeywords', 'array-contains', title.toLowerCase()).get();
+//   /* @ts-ignore */
+//   snapshot.forEach((doc) => console.log(doc.data()));
+// }
+// 
+// })
 // })
