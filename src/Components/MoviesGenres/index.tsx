@@ -31,11 +31,15 @@ export default function MoviesGenres({ setQuery, query }: MoviesGenresArgs) {
     <FormControl fullWidth>
       <InputLabel id="select-movie-genre-label">Select Movie Genre</InputLabel>
       <Select
+        defaultValue="all"
         labelId="select-movie-genre-label"
         id="select-movie-genre"
         label="Search by Movie Genre"
         onChange={handleChange}
       >
+        <MenuItem selected={true} id="All" value={"all"}>
+          All Genres
+        </MenuItem>
         {genre.map((genreElement) => {
           return (
             <MenuItem id={genreElement.genre} value={genreElement.genre}>
