@@ -15,8 +15,7 @@ export const firestoreMoviesQuery = async (query: Query): Promise<Movie[]> => {
   const moviesDataQuery = queryFn(
     collectionGroup(db, "movies"),
     where('titleKeywords', 'array-contains', ((query.title?.toLowerCase() === "" ? null : query.title?.toLowerCase()) ?? "*")),
-    limit(5)
-  );
+=  );
 
   /* Get the Collection Snapshot */
   const querySnapshot = await getDocs(moviesDataQuery);
